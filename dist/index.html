@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eff5f0">
+  <meta name="description" content="제주의 지금 날씨, 기온과 습도를 한눈에 확인하세요.">
+  <title>지금 제주 날씨는?</title>
+  <link rel="stylesheet" href="style.css?v=3">
+  <script src="app.js?v=3" defer></script>
+</head>
+<body>
+  <main>
+    <header><a class="brand" href="./" aria-label="제주 날씨 홈"><span class="brand-icon">◒</span> JEJU, NOW</a><span class="island-label">33.50° N · 126.53° E</span></header>
+    <section class="intro"><p class="eyebrow">잠깐, 제주의 하늘을 만나보세요</p><h1>지금 제주 날씨는?</h1><p class="subtitle">바다 건너 제주의 오늘을, 이곳에서.</p></section>
+    <p id="file-help" class="file-help" hidden>파일 미리보기에서는 날씨 서버 연결이 제한될 수 있어요. <a href="http://127.0.0.1:8765/">날씨 앱 실행 주소에서 열기 ↗</a></p>
+    <section class="weather-card" aria-label="제주 현재 날씨" aria-busy="false">
+      <div class="card-top"><div><span class="location-pin">⌖</span> 제주도 <span class="location-en">Jeju Island</span></div><span class="badge" id="badge">연결 대기</span></div>
+      <div class="current"><div><p class="label">현재 기온</p><div class="temperature"><span id="temperature">—</span><span class="unit">°C</span></div><p id="condition">날씨를 불러올 준비가 되었어요</p></div><div class="weather-art" aria-hidden="true"><div class="sun"></div><div class="cloud"></div><span class="breeze one"></span><span class="breeze two"></span></div></div>
+      <div class="details"><div><span class="label">♧ &nbsp;습도</span><p><strong id="humidity">—</strong><span class="detail-unit"> %</span></p></div><div><span class="label">◷ &nbsp;데이터 업데이트</span><p id="updated">아직 업데이트 전</p><span class="timezone">한국 시간 (KST)</span></div></div>
+      <div class="card-bottom"><p id="status" role="status" aria-live="polite">아래에서 API 키를 연결해 주세요.</p><button id="refresh" type="button"><span aria-hidden="true">↻</span> 새로고침</button></div>
+    </section>
+    <details class="settings" id="settings" open><summary>WeatherAPI 연결 설정 <span aria-hidden="true">＋</span></summary><form id="key-form"><label for="api-key">WeatherAPI API 키</label><div class="input-row"><input id="api-key" type="password" placeholder="API 키를 입력하세요" autocomplete="off" spellcheck="false" required><button type="submit">저장하고 불러오기</button></div><p>키는 이 브라우저에 저장되며 WeatherAPI에만 전송됩니다. 공용 기기에서는 사용 후 <button class="text-button" id="forget" type="button">저장된 키 삭제</button>를 눌러주세요.</p><a href="https://www.weatherapi.com/signup.aspx" target="_blank" rel="noopener noreferrer">WeatherAPI에서 API 키 발급받기 ↗</a></form></details>
+    <footer><span>제주의 하루를 조금 더 가까이. · v3</span><a href="https://www.weatherapi.com/" target="_blank" rel="noopener noreferrer">Powered by WeatherAPI.com ↗</a></footer>
+  </main>
+</body>
+</html>
